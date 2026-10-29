@@ -97,6 +97,7 @@ footer{text-align:center;color:var(--mut);font-size:13px;margin:30px 0 0;padding
 .th button{width:58px;height:58px;padding:0;border:2px solid transparent;border-radius:10px;background:#0e0e11;overflow:hidden;cursor:pointer}
 .th button.on{border-color:var(--gold)}
 .p .im .gal .th img{width:100%;height:100%;max-height:none;object-fit:cover;border-radius:6px;filter:none}
+a.btn.soon{background:transparent;color:var(--gold2);border:1px solid var(--bd);box-shadow:none}a.btn.soon:after{display:none}
 </style></head><body>
 <div class="bgf"></div>
 <section class="hero">
@@ -134,8 +135,8 @@ var MOCK='<div class="ph"><div class="av">SN</div><b>Seu Nome</b><small>Sua prof
 var P=[
 {n:"Placa NFC Premium Google — Branca",t:"Mais pedida",bd:"Premium",d:"O cliente aproxima o celular ou escaneia o QR Code e cai direto na sua página de avaliação do Google.",v:100,i:["s1","g1"]},
 {n:"Placa NFC Premium Google — Preta",t:"Avaliações",bd:"Premium",d:"Mesma função, em versão preta. Visual elegante para balcão, recepção ou mesa.",v:100,i:["s2","g2"]},
-{n:"Placa NFC Premium Instagram",t:"Seguidores",bd:"Premium",d:"Aproximou ou escaneou, o cliente abre o seu perfil do Instagram para seguir.",v:100,i:["s3","i1"]},
-{n:"Cartão de Visita NFC Premium",t:"Frente e verso personalizados",bd:"Premium",d:"Cartão de visita NFC Premium totalmente personalizável: a arte é criada de acordo com a sua marca. O cliente aproxima o celular ou escaneia o QR Code e é direcionado ao seu biosite, com todos os seus links.",v:100,i:["s4","b1","b2"]},
+{n:"Placa NFC Premium Instagram",t:"Seguidores",bd:"Premium",d:"Aproximou ou escaneou, o cliente abre o seu perfil do Instagram para seguir.",v:100,i:["s3","i1"],soon:1},
+{n:"Cartão de Visita NFC Premium",t:"Frente e verso personalizados",bd:"Premium",d:"Cartão de visita NFC Premium totalmente personalizável: a arte é criada de acordo com a sua marca. O cliente aproxima o celular ou escaneia o QR Code e é direcionado ao seu biosite, com todos os seus links.",v:100,i:["s4","b1","b2"],soon:1},
 {n:"Criação de Biosite",t:"Criação + hospedagem mensal",bd:"Serviço",d:"Uma página só sua que reúne tudo o que o seu cliente precisa em um único link. Abre pelo celular, por QR Code ou pelo seu cartão e placa NFC. A mensalidade é apenas de hospedagem: você recebe um painel para fazer qualquer alteração por conta própria.",f:["Agendamento de serviços","Link do Pix (chave copia e cola)","Localização no Google Maps","Instagram e outras redes sociais","Catálogo de serviços ou produtos","Fotos de resultados e portfólio","Botão de avaliação no Google","Link para site ou loja online","Horário de atendimento","Telefone, WhatsApp e e-mail","Vídeos e conteúdos exclusivos","Promoções e cupons"],bn:[["Tudo em um só link.","Troque a bio cheia de links soltos por um endereço único, organizado e com a sua cara."],["Atendimento mais rápido.","O cliente vê serviços e endereço, agenda ou fala com você em poucos toques, a qualquer hora. Menos passos até o contato, menos vendas perdidas."],["Imagem profissional.","Uma página bem-feita transmite confiança e destaca você da concorrência."],["Pagamento facilitado.","Com o Pix à vista, o cliente paga na hora, sem precisar pedir a chave."],["Você no controle.","Mudou preço, endereço ou promoção? Altere você mesmo pelo painel, sem reimprimir cartão ou placa."],["Integra com o NFC.","Cartão de visita e placas levam direto ao seu biosite com uma aproximação."]],v:0,i:["bs"],w:1,pr:"R$ 150,00 <small>criação (pagamento único)</small><br>+ R$ 19,99 <small>por mês de hospedagem</small>"}
 ];
 function R(x){return x.toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}
@@ -144,8 +145,8 @@ function sw(b,k){var g=b.parentNode.parentNode;var im=g.querySelector(".main");i
 function X(p){if(!p.f)return"";return'<div class="xl"><b>O que pode ter no seu biosite</b><ul class="ft">'+p.f.map(function(x){return"<li>"+x+"</li>"}).join("")+'</ul><b>Por que ter um biosite</b><ul class="bn">'+p.bn.map(function(x){return"<li><strong>"+x[0]+"</strong> "+x[1]+"</li>"}).join("")+'</ul></div>'}
 var h="";
 P.forEach(function(p){
-var m=encodeURIComponent("Olá! Tenho interesse em: "+p.n+". Pode me passar mais informações?");
-h+='<div class="p rv'+(p.w?" wide":"")+'"><div class="im"><span class="bdg">'+p.bd+'</span>'+G(p)+'</div><div class="b"><span class="tag">'+p.t+'</span><h3>'+p.n+'</h3><p>'+p.d+'</p>'+X(p)+'<div class="pr">'+(p.pr||R(p.v)+' <small>por unidade</small>')+'</div><a class="btn" href="https://wa.me/'+WA+'?text='+m+'" target="_blank" rel="noopener">Pedir no WhatsApp</a></div></div>';
+var m=encodeURIComponent("Olá! Tenho interesse em: "+p.n+". Pode me passar mais informações?"),ms=encodeURIComponent("Olá! Quero ser avisado quando estiver disponível: "+p.n+".");
+h+='<div class="p rv'+(p.w?" wide":"")+'"><div class="im"><span class="bdg">'+(p.soon?"Em breve":p.bd)+'</span>'+G(p)+'</div><div class="b"><span class="tag">'+p.t+'</span><h3>'+p.n+'</h3><p>'+p.d+'</p>'+X(p)+'<div class="pr">'+(p.pr||R(p.v)+' <small>por unidade</small>')+'</div>'+(p.soon?'<a class="btn soon" href="https://wa.me/'+WA+'?text='+ms+'" target="_blank" rel="noopener">Em breve · Quero ser avisado</a>':'<a class="btn" href="https://wa.me/'+WA+'?text='+m+'" target="_blank" rel="noopener">Pedir no WhatsApp</a>')+'</div></div>';
 });
 document.getElementById("gr").innerHTML=h;
 document.getElementById("h2").src=IMG.g2;document.getElementById("h1i").src=IMG.g1;document.getElementById("h3").src=IMG.i1;document.getElementById("dm").src=IMG.g1;
