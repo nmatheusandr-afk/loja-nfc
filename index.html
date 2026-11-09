@@ -314,6 +314,32 @@ a.btn.soon{background:transparent;color:var(--gold2);border:1px solid var(--bd);
 .p .im .gal.cv img.main{aspect-ratio:245.2/155.9;object-fit:contain;background:#000}
 .p .im .gal.cv .th img{object-fit:contain;background:#000}
 
+
+/* Numeração automática dos itens do catálogo (01, 02, 03...) */
+.p .im>.item-no{
+  position:absolute;
+  z-index:4;
+  top:12px;
+  left:12px;
+  min-width:37px;
+  height:34px;
+  display:grid;
+  place-items:center;
+  padding:0 9px;
+  border-radius:9px;
+  background:linear-gradient(135deg,var(--gold2),var(--gold));
+  color:#171105;
+  font:800 14px/1 system-ui,-apple-system,"Segoe UI",sans-serif;
+  letter-spacing:.02em;
+  box-shadow:0 4px 12px rgba(0,0,0,.35);
+  font-variant-numeric:tabular-nums;
+}
+.p .im>.bdg{left:auto;right:12px;}
+@media(max-width:560px){
+  .p .im>.item-no{top:12px;left:12px;min-width:34px;height:32px;font-size:13px}
+  .p .im>.bdg{right:12px}
+}
+
 </style></head><body>
 <div class="bgf"></div>
 <section class="hero">
@@ -361,9 +387,10 @@ function G(p){if(!p.i.length)return'<div class="gal sq"><div class="nf">Foto em 
 function sw(b,k){var g=b.parentNode.parentNode;var im=g.querySelector(".main");im.src=IMG[k];im.className=k=="s4"?"main sc":"main";[].forEach.call(b.parentNode.children,function(x){x.className=""});b.className="on"}
 function X(p){if(!p.f)return"";return'<div class="xl"><b>O que pode ter no seu biosite</b><ul class="ft">'+p.f.map(function(x){return"<li>"+x+"</li>"}).join("")+'</ul><b>Por que ter um biosite</b><ul class="bn">'+p.bn.map(function(x){return"<li><strong>"+x[0]+"</strong> "+x[1]+"</li>"}).join("")+'</ul></div>'}
 var h="";
-P.forEach(function(p){
+P.forEach(function(p,idx){
+var itemNo=('0'+(idx+1)).slice(-2);
 var m=encodeURIComponent("Olá! Tenho interesse em: "+p.n+". Pode me passar mais informações?"),ms=encodeURIComponent("Olá! Quero ser avisado quando estiver disponível: "+p.n+".");
-h+='<div class="p rv'+(p.w?" wide":"")+'"><div class="im"><span class="bdg">'+(p.soon?"Em breve":p.bd)+'</span>'+G(p)+'</div><div class="b"><span class="tag">'+p.t+'</span><h3>'+p.n+'</h3><p>'+p.d+'</p>'+X(p)+'<div class="pr">'+(p.pr||R(p.v)+' <small>por unidade</small>')+'</div>'+(p.soon?'<a class="btn soon" href="https://wa.me/'+WA+'?text='+ms+'" target="_blank" rel="noopener">Em breve · Quero ser avisado</a>':'<a class="btn" href="https://wa.me/'+WA+'?text='+m+'" target="_blank" rel="noopener">Pedir no WhatsApp</a>')+'</div></div>';
+h+='<div class="p rv'+(p.w?" wide":"")+'"><div class="im"><span class="item-no" aria-label="Produto '+itemNo+'">'+itemNo+'</span><span class="bdg">'+(p.soon?"Em breve":p.bd)+'</span>'+G(p)+'</div><div class="b"><span class="tag">'+p.t+'</span><h3>'+p.n+'</h3><p>'+p.d+'</p>'+X(p)+'<div class="pr">'+(p.pr||R(p.v)+' <small>por unidade</small>')+'</div>'+(p.soon?'<a class="btn soon" href="https://wa.me/'+WA+'?text='+ms+'" target="_blank" rel="noopener">Em breve · Quero ser avisado</a>':'<a class="btn" href="https://wa.me/'+WA+'?text='+m+'" target="_blank" rel="noopener">Pedir no WhatsApp</a>')+'</div></div>';
 });
 document.getElementById("gr").innerHTML=h;
 
