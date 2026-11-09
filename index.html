@@ -363,6 +363,34 @@ a.btn.soon{background:transparent;color:var(--gold2);border:1px solid var(--bd);
 .biosite-detail[open] summary{margin-bottom:10px}
 .biosite-detail .xl{margin-top:0}
 
+
+/* Política de encomendas: discreta, destacada e responsiva */
+.order-notice{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:10px 16px;
+  margin:0 auto 23px;
+  padding:14px 18px;
+  background:linear-gradient(115deg,rgba(212,169,79,.11),rgba(212,169,79,.025));
+  border:1px solid var(--bd);
+  border-radius:16px;
+  font-size:14px;
+  line-height:1.55;
+  color:var(--mut);
+}
+.order-notice-title{
+  flex-shrink:0;
+  font-size:14px;
+  font-weight:800;
+  color:var(--gold2);
+}
+.order-notice strong{color:var(--gold2);font-weight:800}
+@media(max-width:560px){
+ .order-notice{padding:12px 14px;font-size:13px;gap:6px}
+ .order-notice-title{width:100%;font-size:14px}
+}
+
 </style></head><body>
 <div class="bgf"></div>
 <section class="hero">
@@ -382,6 +410,7 @@ a.btn.soon{background:transparent;color:var(--gold2);border:1px solid var(--bd);
 <div class="s"><span class="n">3</span><div><b>Seu cliente acessa</b>Aproxima o celular com NFC compatível ou escaneia o QR Code nos modelos que possuem esse recurso.</div></div>
 </div>
 <h2 class="sec rv" id="produtos">Nossos produtos</h2>
+<div class="order-notice rv" role="note"><span class="order-notice-title">Pedidos sob encomenda</span><span>Todos os pedidos são preparados sob encomenda, com prazo de <strong>7 dias</strong> para ficarem prontos. A verificação do Perfil no Google pode depender de prazos da própria plataforma.</span></div>
 <div class="gr" id="gr"></div>
 <div class="end rv"><h2>Pronto para ter mais clientes?</h2><p>Me chame no WhatsApp e escolha o seu modelo.</p><a class="btn cta" id="cta2" href="#" target="_blank" rel="noopener">Falar no WhatsApp</a></div>
 <footer>© Catálogo NFC Premium · Pedidos e dúvidas pelo WhatsApp: (12) 98290-7755</footer>
@@ -406,7 +435,7 @@ var P=[
 {n:"Placa NFC Premium Instagram",t:"Seguidores",bd:"Premium",d:"Placa de acrílico 10×10 com chip NFC. O cliente aproxima o celular e abre direto o seu perfil do Instagram para seguir.",v:100,i:["ig"],sq:1},
 {n:"Placa NFC Premium Pix",t:"Pagamentos",bd:"Premium",d:"Placa de acrílico 10×10 com chip NFC. O cliente aproxima o celular e abre o seu link para pagar com Pix de forma rápida.",v:100,i:["pixAtualizado"],sq:1},
 {n:"Placa NFC Premium WhatsApp",t:"Atendimento",bd:"Premium",d:"Placa de acrílico 10×10 com chip NFC. O cliente aproxima o celular e abre direto uma conversa com você no WhatsApp.",v:100,i:["whatsAtualizado"],sq:1},
-{n:"Cartão de Visita NFC Premium",t:"Modelo universal · frente e verso",bd:"Premium",d:"Cartão NFC Premium com arte universal, pronta para uso, nas duas faces. Ao aproximar um celular com NFC compatível, o cliente abre seu biosite com contatos e links. Configuramos o link conforme o seu negócio.",v:100,i:["cvFrente","cvVerso"],soon:1,cv:1},
+{n:"Cartão de Visita NFC Premium",t:"Modelo universal · frente e verso",bd:"Premium",d:"Cartão NFC Premium com arte universal, pronta para uso, nas duas faces. Ao aproximar um celular com NFC compatível, o cliente abre seu biosite com contatos e links. Configuramos o link conforme o seu negócio.",v:100,i:["cvFrente","cvVerso"],cv:1},
 {n:"Criação de Perfil no Google + Placa NFC Premium",t:"Pacote completo",bd:"Pacote",d:"O Perfil da Empresa no Google é gratuito. Este pacote inclui nosso serviço profissional de criação e configuração do perfil, além da placa NFC Premium com o link de avaliações. A publicação depende da elegibilidade do negócio e da verificação do Google; o prazo de ativação pode variar.",v:200,pr:"R$ 200,00 <small>serviço de configuração + placa NFC</small>",i:["perfilGoogleArte","p2"],sq:0},
 {n:"Criação de Biosite",t:"Criação + hospedagem mensal",bd:"Serviço",d:"Uma página só sua que reúne tudo o que o seu cliente precisa em um único link. Abre pelo celular, por QR Code ou pelo seu cartão e placa NFC. A mensalidade é apenas de hospedagem: você recebe um painel para fazer qualquer alteração por conta própria.",f:["Agendamento de serviços","Link do Pix (chave copia e cola)","Localização no Google Maps","Instagram e outras redes sociais","Catálogo de serviços ou produtos","Fotos de resultados e portfólio","Botão de avaliação no Google","Link para site ou loja online","Horário de atendimento","Telefone, WhatsApp e e-mail","Vídeos e conteúdos exclusivos","Promoções e cupons"],bn:[["Tudo em um só link.","Troque a bio cheia de links soltos por um endereço único, organizado e com a sua cara."],["Atendimento mais rápido.","O cliente vê serviços e endereço, agenda ou fala com você em poucos toques, a qualquer hora. Menos passos até o contato, menos vendas perdidas."],["Imagem profissional.","Uma página bem-feita transmite confiança e destaca você da concorrência."],["Pagamento facilitado.","Com o Pix à vista, o cliente paga na hora, sem precisar pedir a chave."],["Você no controle.","Mudou preço, endereço ou promoção? Altere você mesmo pelo painel, sem reimprimir cartão ou placa."],["Integra com o NFC.","Cartão de visita e placas levam direto ao seu biosite com uma aproximação."]],v:0,i:["bs"],w:1,pr:"R$ 150,00 <small>criação (pagamento único)</small><br>+ R$ 19,99 <small>por mês de hospedagem</small>"}
 ];
