@@ -134,6 +134,9 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var
 .price-note{font-size:25px}
 @media(max-width:870px){.hero-grid{grid-template-columns:1fr;min-height:0;gap:12px;padding-block:45px 28px}.hero-showcase{min-height:390px}}
 @media(max-width:560px){.hero-showcase{min-height:270px;height:74vw;max-height:390px}.hero-card{width:86%;top:8%}.hero-card.back{width:70%;bottom:5%}.photo{min-height:250px;padding-top:48px}.photo img{height:245px}#produto-01 .photo img{max-height:280px}}
+.launch-combo{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center;margin-top:24px;padding:clamp(24px,4vw,42px);border:1px solid var(--stroke);border-radius:24px;background:radial-gradient(ellipse at 90% 20%,rgba(215,172,89,.12),transparent 70%),linear-gradient(145deg,#1b1b1f,#0e0e11);box-shadow:0 18px 42px rgba(0,0,0,.32)}
+.combo-copy h2{font-size:clamp(30px,4vw,44px);margin:0 0 12px}.combo-copy>p:not(.kicker){color:var(--mut);margin:0;max-width:520px}.combo-offer{border-left:1px solid var(--stroke);padding-left:32px}.combo-old{color:var(--mut);font-size:15px}.combo-price{font-size:clamp(34px,5vw,48px);font-weight:800;color:var(--gold2);line-height:1.2}.combo-saving{color:var(--gold);font-size:14px;margin:8px 0 16px}.combo-offer .btn{width:100%}
+@media(max-width:870px){.launch-combo{max-width:640px;margin-inline:auto;grid-template-columns:1fr;gap:20px}.combo-offer{border-left:0;border-top:1px solid var(--stroke);padding:20px 0 0}}
 </style>
 </head>
 <body>
@@ -161,6 +164,10 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var
  <section class="section wrap" id="solucoes">
   <div class="section-header"><p class="kicker">Produtos e serviços</p><h2>Soluções para <span class="highlight">sua presença digital.</span></h2><p>Escolha o produto ou serviço ideal para você e sua empresa.</p></div>
   <div class="solutions" id="products"></div>
+  <article class="launch-combo" id="combo-promocional" aria-labelledby="combo-title">
+   <div class="combo-copy"><p class="kicker">Combo de lançamento</p><h2 id="combo-title">Cartão NFC + <span class="highlight">Biosite</span></h2><p>Tenha seu cartão físico e sua página digital prontos para compartilhar seus contatos, links e informações em um toque.</p></div>
+   <div class="combo-offer"><div class="combo-old">De <s>R$ 180,00</s></div><div class="combo-price">R$ 149,90</div><p class="combo-saving">Economize R$ 30,10</p><a class="btn" id="comboContact" href="https://wa.me/5512982907755?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20combo%20promocional%20de%20Cart%C3%A3o%20NFC%20%2B%20Biosite%20por%20R%24%20149%2C90.%20Gostaria%20de%20saber%20como%20funciona%20e%20o%20prazo." target="_blank" rel="noopener noreferrer">Quero o combo promocional</a></div>
+  </article>
  </section>
  <section class="section wrap" id="como-funciona">
   <div class="section-header"><p class="kicker">Simples e direto</p><h2>Como funciona o cartão digital</h2><p>Você compartilha seus contatos e redes sociais com praticidade, sem precisar explicar tudo novamente.</p></div>
