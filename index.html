@@ -153,6 +153,17 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var
 .zoom-arrow[hidden]{display:none}.zoom-stage.single{grid-template-columns:minmax(0,1fr)}
 @media(max-width:870px){.hero-grid{grid-template-columns:1fr;gap:24px}.hero-showcase{max-width:650px;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}}
 @media(max-width:560px){.hero-showcase{padding:8px 0;grid-template-columns:1fr;max-width:340px;gap:19px}.hero-view span{font-size:12px}.zoom{padding:52px 8px 14px}.zoom-stage{grid-template-columns:32px minmax(0,1fr) 32px;gap:4px}.zoom-arrow{width:32px;height:44px;font-size:29px}}
+.hero-showcase{max-width:540px;gap:34px;padding:25px 8px;grid-template-columns:1fr}
+.hero-view{animation:cardHoverA 5s ease-in-out infinite;cursor:zoom-in;gap:0}
+.hero-view:nth-of-type(2){animation:cardHoverB 5.8s ease-in-out infinite}
+.hero-showcase .hero-card,.hero-showcase .hero-card.back{max-width:490px;width:100%;height:auto;filter:none;image-rendering:auto;transform:none}
+@keyframes cardHoverA{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes cardHoverB{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+.hero-view:hover,.hero-view:focus-visible{animation-play-state:paused}
+.hero-copy{filter:none;transform:none}.hero-desc{color:#e5dfd5;font-weight:450}
+@media(max-width:870px){.hero-showcase{max-width:550px;grid-template-columns:1fr;gap:30px}}
+@media(max-width:560px){.hero-showcase{max-width:100%;gap:26px;padding:16px 5px}}
+@media(prefers-reduced-motion:reduce){.hero-view{animation:none!important}}
 </style>
 </head>
 <body>
@@ -171,8 +182,8 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var
     <div class="hero-points"><span>Cartão NFC + biosite</span><span>Links em um só lugar</span></div>
    </div>
    <div class="hero-showcase" aria-label="Demonstração de frente e verso do cartão NFC">
-    <button type="button" class="hero-view" data-hero-photo="0" aria-label="Ampliar frente do cartão NFC"><img id="heroCardFront" class="hero-card" alt="Frente do cartão físico de identidade digital NFC"><span>Frente · Ampliar</span></button>
-    <button type="button" class="hero-view" data-hero-photo="1" aria-label="Ampliar verso do cartão NFC"><img id="heroCardBack" class="hero-card back" alt="Verso do cartão físico de identidade digital NFC"><span>Verso · Ampliar</span></button>
+    <button type="button" class="hero-view" data-hero-photo="0" aria-label="Ampliar frente do cartão NFC"><img id="heroCardFront" class="hero-card" alt="Frente do cartão físico de identidade digital NFC"></button>
+    <button type="button" class="hero-view" data-hero-photo="1" aria-label="Ampliar verso do cartão NFC"><img id="heroCardBack" class="hero-card back" alt="Verso do cartão físico de identidade digital NFC"></button>
 
    </div>
   </div>
